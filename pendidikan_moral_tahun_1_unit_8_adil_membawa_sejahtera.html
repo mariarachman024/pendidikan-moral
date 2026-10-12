@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendidikan Moral Tahun 1 - Unit 8: Adil Membawa Sejahtera</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka & Nunito for friendly typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            font-family: 'Fredoka', 'Nunito', cursive, sans-serif;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f0fdf4;
+            background-image: 
+                radial-gradient(#bbf7d0 1.5px, transparent 1.5px), 
+                radial-gradient(#bbf7d0 1.5px, #f0fdf4 1.5px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        /* Claymorphism visual effects */
+        .clay-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 
+                inset -6px -6px 12px rgba(0, 0, 0, 0.05),
+                inset 6px 6px 12px rgba(255, 255, 255, 0.9),
+                8px 12px 20px rgba(16, 185, 129, 0.12);
+            border: 4px solid #ffffff;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .clay-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .clay-btn {
+            border-radius: 999px;
+            font-weight: 700;
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .clay-btn:active {
+            transform: scale(0.95) translateY(2px) !important;
+            box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .clay-btn-green {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            box-shadow: 
+                0 8px 0 #15803d,
+                0 12px 18px rgba(34, 197, 94, 0.35),
+                inset 0 3px 6px rgba(255, 255, 255, 0.4);
+            border: 2px solid #86efac;
+        }
+
+        .clay-btn-yellow {
+            background: linear-gradient(135deg, #facc15, #eab308);
+            color: #713f12;
+            box-shadow: 
+                0 8px 0 #a16207,
+                0 12px 18px rgba(234, 179, 8, 0.35),
+                inset 0 3px 6px rgba(255, 255, 255, 0.5);
+            border: 2px solid #fef08a;
+        }
+
+        .clay-btn-blue {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: white;
+            box-shadow: 
+                0 8px 0 #0369a1,
+                0 12px 18px rgba(2, 132, 199, 0.35),
+                inset 0 3px 6px rgba(255, 255, 255, 0.4);
+            border: 2px solid #bae6fd;
+        }
+
+        .clay-btn-orange {
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            color: white;
+            box-shadow: 
+                0 8px 0 #c2410c,
+                0 12px 18px rgba(249, 115, 22, 0.35),
+                inset 0 3px 6px rgba(255, 255, 255, 0.4);
+            border: 2px solid #fed7aa;
+        }
+
+        .clay-btn-purple {
+            background: linear-gradient(135deg, #c084fc, #9333ea);
+            color: white;
+            box-shadow: 
+                0 8px 0 #6b21a8,
+                0 12px 18px rgba(147, 51, 234, 0.35),
+                inset 0 3px 6px rgba(255, 255, 255, 0.4);
+            border: 2px solid #e9d5ff;
+        }
+
+        .clay-badge {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06), 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px solid #e2e8f0;
+        }
+
+        /* Pulse animation for kids */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
+        }
+
+        /* Modal backdrop animation */
+        .modal-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Radio Option Clay Style */
+        .option-clay-btn {
+            border: 3px solid #cbd5e1;
+            background: #ffffff;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 0 #cbd5e1;
+        }
+        .option-clay-btn.selected {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+            box-shadow: 0 4px 0 #2563eb;
+            transform: translateY(-2px);
+        }
+        .option-clay-btn.correct-select {
+            border-color: #22c55e !important;
+            background-color: #f0fdf4 !important;
+            box-shadow: 0 4px 0 #16a34a !important;
+            color: #15803d !important;
+        }
+        .option-clay-btn.wrong-select {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2 !important;
+            box-shadow: 0 4px 0 #dc2626 !important;
+            color: #b91c1c !important;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-slate-800 antialiased pb-12">
+
+    <!-- PERINGKAT ATAS / HEADER SYSTEM -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b-4 border-emerald-300 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="tukarHalaman(1)">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-400 to-teal-300 flex items-center justify-center text-white text-2xl shadow-md border-2 border-white">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-emerald-800 leading-tight">Pendidikan Moral</h1>
+                    <p class="text-xs font-semibold text-emerald-600">Tahun 1 • Unit 8: Adil Membawa Sejahtera</p>
+                    <p class="text-[11px] font-bold text-emerald-700">SK PUTERI • Disediakan oleh Cikgu Maria A. Rachman</p>
+                </div>
+            </div>
+
+            <!-- BUTANG NAVIGASI HALAMAN -->
+            <nav class="flex items-center gap-1.5 overflow-x-auto py-1 max-w-full">
+                <button onclick="tukarHalaman(1)" id="nav-1" class="nav-tab px-3.5 py-2 rounded-2xl text-sm font-bold flex items-center gap-1.5 transition-all bg-emerald-500 text-white shadow-sm">
+                    <i class="fa-solid fa-house"></i> Utama
+                </button>
+                <button onclick="tukarHalaman(2)" id="nav-2" class="nav-tab px-3.5 py-2 rounded-2xl text-sm font-bold flex items-center gap-1.5 transition-all bg-slate-100 text-slate-600 hover:bg-emerald-100">
+                    <i class="fa-solid fa-book-open"></i> Maksud
+                </button>
+                <button onclick="tukarHalaman(3)" id="nav-3" class="nav-tab px-3.5 py-2 rounded-2xl text-sm font-bold flex items-center gap-1.5 transition-all bg-slate-100 text-slate-600 hover:bg-emerald-100">
+                    <i class="fa-solid fa-circle-question"></i> Uji Situasi
+                </button>
+                <button onclick="tukarHalaman(4)" id="nav-4" class="nav-tab px-3.5 py-2 rounded-2xl text-sm font-bold flex items-center gap-1.5 transition-all bg-slate-100 text-slate-600 hover:bg-emerald-100">
+                    <i class="fa-solid fa-heart-crack"></i> Kesan
+                </button>
+                <button onclick="tukarHalaman(5)" id="nav-5" class="nav-tab px-3.5 py-2 rounded-2xl text-sm font-bold flex items-center gap-1.5 transition-all bg-amber-400 text-amber-900 shadow-sm hover:bg-amber-300">
+                    <i class="fa-solid fa-pen-to-square"></i> Latihan
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTAINER UTAMA KANDUNGAN -->
+    <main class="max-w-5xl mx-auto px-4 pt-6 flex-grow w-full">
+
+        <!-- HALAMAN 1: JOM BELAJAR! -->
+        <section id="halaman-1" class="page-content block">
+            <div class="clay-card p-6 md:p-10 bg-gradient-to-b from-amber-50/50 via-white to-emerald-50/30 text-center relative overflow-hidden border-4 border-emerald-200">
+                <div class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-800 rounded-full text-sm font-extrabold mb-2 border border-emerald-300">
+                    <i class="fa-solid fa-star text-amber-500 mr-1"></i> TEMA: DIRI SAYA
+                </div>
+
+                <!-- MAKLUMAT SEKOLAH DAN GURU -->
+                <div class="mb-4">
+                    <p class="text-xs md:text-sm font-bold text-emerald-800 bg-emerald-100/80 px-4 py-1.5 rounded-full inline-block border border-emerald-300 shadow-sm">
+                        <i class="fa-solid fa-school text-emerald-600 mr-1.5"></i> SK PUTERI &nbsp;•&nbsp; <i class="fa-solid fa-user-tie text-emerald-600 mr-1.5"></i> Disediakan oleh Cikgu Maria A. Rachman
+                    </p>
+                </div>
+                
+                <h2 class="text-3xl md:text-5xl font-black text-emerald-800 tracking-wide mb-4">
+                    UNIT 8: ADIL MEMBAWA SEJAHTERA
+                </h2>
+
+                <!-- ILUSTRASI KANAK-KANAK BERKONGSI DAN BERMAIN -->
+                <div class="my-6 max-w-lg mx-auto bg-emerald-100/60 p-6 rounded-3xl border-2 border-emerald-200">
+                    <svg viewBox="0 0 500 280" class="w-full h-auto drop-shadow-md rounded-2xl">
+                        <!-- Latar Belakang Taman -->
+                        <rect x="0" y="0" width="500" height="280" rx="20" fill="#e0f2fe" />
+                        <path d="M0 200 Q 250 160 500 200 L 500 280 L 0 280 Z" fill="#86efac" />
+                        <path d="M0 220 Q 250 190 500 220 L 500 280 L 0 280 Z" fill="#4ade80" />
+                        <!-- Matahari -->
+                        <circle cx="430" cy="60" r="35" fill="#fde047" />
+                        <circle cx="430" cy="60" r="42" fill="#fef08a" opacity="0.4" />
+                        <!-- Awan Clay -->
+                        <path d="M 60 70 Q 75 50 100 55 Q 120 40 145 55 Q 165 70 150 90 Q 120 100 80 95 Z" fill="#ffffff" opacity="0.9" />
+                        <path d="M 300 80 Q 315 65 335 70 Q 350 55 370 70 Q 385 85 370 100 Q 340 105 310 100 Z" fill="#ffffff" opacity="0.9" />
+                        
+                        <!-- Budak Lelaki (Ali) Berkongsi Mainan -->
+                        <!-- Badan -->
+                        <rect x="140" y="160" width="45" height="60" rx="15" fill="#38bdf8" />
+                        <!-- Kepala -->
+                        <circle cx="162" cy="130" r="28" fill="#fca5a5" />
+                        <!-- Rambut -->
+                        <path d="M 136 125 Q 162 95 188 125 Z" fill="#475569" />
+                        <!-- Muka -->
+                        <circle cx="154" cy="128" r="3.5" fill="#1e293b" />
+                        <circle cx="170" cy="128" r="3.5" fill="#1e293b" />
+                        <path d="M 156 138 Q 162 145 168 138" stroke="#1e293b" stroke-width="3" fill="none" stroke-linecap="round" />
+                        <!-- Tangan pegang mainan -->
+                        <path d="M 180 170 Q 205 165 215 175" stroke="#fca5a5" stroke-width="10" stroke-linecap="round" fill="none" />
+
+                        <!-- Budak Perempuan (Siti) Menerima dengan Gembira -->
+                        <!-- Badan -->
+                        <path d="M 290 220 L 320 220 L 315 165 L 295 165 Z" fill="#f472b6" />
+                        <circle cx="305" cy="130" r="28" fill="#fed7aa" />
+                        <!-- Rambut Toncet -->
+                        <path d="M 280 120 Q 305 95 330 120 Z" fill="#78350f" />
+                        <circle cx="275" cy="125" r="10" fill="#78350f" />
+                        <circle cx="335" cy="125" r="10" fill="#78350f" />
+                        <!-- Muka -->
+                        <circle cx="297" cy="128" r="3.5" fill="#1e293b" />
+                        <circle cx="313" cy="128" r="3.5" fill="#1e293b" />
+                        <path d="M 298 138 Q 305 146 312 138" stroke="#1e293b" stroke-width="3" fill="none" stroke-linecap="round" />
+                        <!-- Tangan hulur -->
+                        <path d="M 290 170 Q 260 165 245 175" stroke="#fed7aa" stroke-width="10" stroke-linecap="round" fill="none" />
+
+                        <!-- Blok Mainan Di Tengah (Simbol Perkongsian Adil) -->
+                        <rect x="220" y="165" width="22" height="22" rx="4" fill="#facc15" stroke="#ca8a04" stroke-width="2" />
+                        <rect x="245" y="165" width="22" height="22" rx="4" fill="#4ade80" stroke="#16a34a" stroke-width="2" />
+                        <circle cx="231" cy="176" r="4" fill="#ffffff" />
+                        <circle cx="256" cy="176" r="4" fill="#ffffff" />
+
+                        <!-- Hiasan Bunga & Rumput -->
+                        <circle cx="80" cy="235" r="8" fill="#f43f5e" />
+                        <circle cx="80" cy="235" r="3" fill="#fde047" />
+                        <circle cx="420" cy="240" r="8" fill="#a855f7" />
+                        <circle cx="420" cy="240" r="3" fill="#fde047" />
+                    </svg>
+                </div>
+
+                <!-- PESANAN UTAMA -->
+                <div class="bg-amber-100/80 border-2 border-amber-300 rounded-2xl p-4 max-w-xl mx-auto mb-8 shadow-inner">
+                    <p class="text-xl md:text-2xl font-bold text-amber-900 leading-relaxed">
+                        <i class="fa-solid fa-quote-left text-amber-400 mr-2"></i>
+                        Hari ini kita akan belajar tentang sikap adil dalam kehidupan seharian.
+                        <i class="fa-solid fa-quote-right text-amber-400 ml-2"></i>
+                    </p>
+                </div>
+
+                <!-- BUTANG TINDAKAN -->
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <button onclick="tukarHalaman(2)" class="clay-btn clay-btn-green text-lg md:text-xl px-8 py-4 text-white">
+                        <i class="fa-solid fa-play text-xl"></i> MULA BELAJAR
+                    </button>
+                    <button onclick="bukaModalPanduan()" class="clay-btn clay-btn-yellow text-lg md:text-xl px-7 py-4">
+                        <i class="fa-solid fa-circle-info text-xl"></i> CARA MENGGUNAKAN LAMAN INI
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 2: APAKAH MAKSUD ADIL? -->
+        <section id="halaman-2" class="page-content hidden">
+            <div class="clay-card p-6 md:p-8 mb-6 border-4 border-sky-200 bg-gradient-to-b from-sky-50 to-white">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-10 h-10 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center text-xl">1</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-sky-800">Apakah Maksud Adil?</h2>
+                </div>
+
+                <!-- DEFINISI ADIL -->
+                <div class="bg-sky-100/90 border-3 border-sky-300 rounded-3xl p-5 md:p-6 mb-8 text-center shadow-inner">
+                    <p class="text-xl md:text-2xl font-black text-sky-900 leading-snug">
+                        "Adil bermaksud kita melayan orang lain dengan saksama dan tidak pilih kasih."
+                    </p>
+                </div>
+
+                <h3 class="text-xl md:text-2xl font-bold text-slate-700 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-shapes text-amber-500"></i> Contoh Perlakuan Adil:
+                </h3>
+
+                <!-- 3 CONTOH PERLAKUAN ADIL BERSERTA ILUSTRASI -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Tunjuk Contoh 1 -->
+                    <div class="bg-emerald-50 border-3 border-emerald-300 rounded-3xl p-5 text-center flex flex-col items-center justify-between hover:scale-102 transition-transform">
+                        <div class="w-full bg-white rounded-2xl p-3 mb-3 border border-emerald-200 shadow-sm">
+                            <svg viewBox="0 0 200 130" class="w-full h-auto">
+                                <rect x="0" y="0" width="200" height="130" rx="12" fill="#ecfdf5"/>
+                                <!-- Pensel Berkongsi -->
+                                <rect x="40" y="50" width="120" height="16" rx="4" fill="#facc15" />
+                                <polygon points="160,50 185,58 160,66" fill="#f97316" />
+                                <polygon points="175,55 185,58 175,61" fill="#1e293b" />
+                                <rect x="25" y="50" width="15" height="16" rx="2" fill="#f472b6" />
+                                <!-- Tangan Kiri & Kanan -->
+                                <circle cx="35" cy="85" r="14" fill="#fca5a5" />
+                                <circle cx="165" cy="85" r="14" fill="#fed7aa" />
+                                <text x="100" y="115" font-size="12" font-weight="bold" fill="#047857" text-anchor="middle">Sama-Sama Guna</text>
+                            </svg>
+                        </div>
+                        <span class="inline-block px-3 py-1 bg-emerald-200 text-emerald-900 font-extrabold text-sm rounded-full mb-2">Contoh 1</span>
+                        <p class="font-bold text-lg text-emerald-900">Berkongsi alat tulis dengan rakan.</p>
+                    </div>
+
+                    <!-- Tunjuk Contoh 2 -->
+                    <div class="bg-blue-50 border-3 border-blue-300 rounded-3xl p-5 text-center flex flex-col items-center justify-between hover:scale-102 transition-transform">
+                        <div class="w-full bg-white rounded-2xl p-3 mb-3 border border-blue-200 shadow-sm">
+                            <svg viewBox="0 0 200 130" class="w-full h-auto">
+                                <rect x="0" y="0" width="200" height="130" rx="12" fill="#f0f9ff"/>
+                                <!-- Garisan Barisan -->
+                                <line x1="20" y1="95" x2="180" y2="95" stroke="#0284c7" stroke-width="4" stroke-dasharray="8 6"/>
+                                <!-- Budak 1 -->
+                                <circle cx="50" cy="50" r="16" fill="#fca5a5"/>
+                                <rect x="40" y="66" width="20" height="25" rx="5" fill="#38bdf8"/>
+                                <!-- Budak 2 -->
+                                <circle cx="100" cy="50" r="16" fill="#fed7aa"/>
+                                <rect x="90" y="66" width="20" height="25" rx="5" fill="#4ade80"/>
+                                <!-- Budak 3 -->
+                                <circle cx="150" cy="50" r="16" fill="#fbcfe8"/>
+                                <rect x="140" y="66" width="20" height="25" rx="5" fill="#facc15"/>
+                                <text x="100" y="118" font-size="12" font-weight="bold" fill="#0369a1" text-anchor="middle">Ikut Giliran</text>
+                            </svg>
+                        </div>
+                        <span class="inline-block px-3 py-1 bg-blue-200 text-blue-900 font-extrabold text-sm rounded-full mb-2">Contoh 2</span>
+                        <p class="font-bold text-lg text-blue-900">Beratur dan menunggu giliran.</p>
+                    </div>
+
+                    <!-- Tunjuk Contoh 3 -->
+                    <div class="bg-purple-50 border-3 border-purple-300 rounded-3xl p-5 text-center flex flex-col items-center justify-between hover:scale-102 transition-transform">
+                        <div class="w-full bg-white rounded-2xl p-3 mb-3 border border-purple-200 shadow-sm">
+                            <svg viewBox="0 0 200 130" class="w-full h-auto">
+                                <rect x="0" y="0" width="200" height="130" rx="12" fill="#faf5ff"/>
+                                <!-- Pinggan & Roti/Makan -->
+                                <ellipse cx="60" cy="70" rx="35" ry="18" fill="#e9d5ff" />
+                                <ellipse cx="140" cy="70" rx="35" ry="18" fill="#e9d5ff" />
+                                <!-- Kek Makanan Sama Saiz -->
+                                <rect x="42" y="52" width="36" height="22" rx="4" fill="#fb7185" />
+                                <rect x="122" y="52" width="36" height="22" rx="4" fill="#fb7185" />
+                                <circle cx="60" cy="50" r="5" fill="#dc2626" />
+                                <circle cx="140" cy="50" r="5" fill="#dc2626" />
+                                <text x="100" y="115" font-size="12" font-weight="bold" fill="#6b21a8" text-anchor="middle">Sama Banyak</text>
+                            </svg>
+                        </div>
+                        <span class="inline-block px-3 py-1 bg-purple-200 text-purple-900 font-extrabold text-sm rounded-full mb-2">Contoh 3</span>
+                        <p class="font-bold text-lg text-purple-900">Membahagikan makanan secara sama rata.</p>
+                    </div>
+                </div>
+
+                <!-- KEPENTINGAN BERSIKAP ADIL -->
+                <div class="bg-amber-50 border-3 border-amber-300 rounded-3xl p-6">
+                    <h3 class="text-xl md:text-2xl font-black text-amber-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-face-smile-beam text-amber-500 text-2xl"></i> Mengapa Kita Perlu Bersikap Adil?
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 flex items-center gap-3 shadow-sm">
+                            <span class="text-3xl">😃</span>
+                            <span class="font-bold text-slate-700 text-lg">Semua orang berasa gembira.</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 flex items-center gap-3 shadow-sm">
+                            <span class="text-3xl">🕊️</span>
+                            <span class="font-bold text-slate-700 text-lg">Kita dapat hidup dengan aman.</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 flex items-center gap-3 shadow-sm">
+                            <span class="text-3xl">🤝</span>
+                            <span class="font-bold text-slate-700 text-lg">Kita dapat berkawan dengan baik.</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 flex items-center gap-3 shadow-sm">
+                            <span class="text-3xl">🌈</span>
+                            <span class="font-bold text-slate-700 text-lg">Kita mengelakkan pergaduhan.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NAVIGASI SELEPAS BELAJAR MAKSUD -->
+                <div class="mt-8 flex justify-between items-center gap-4">
+                    <button onclick="tukarHalaman(1)" class="clay-btn bg-slate-200 text-slate-700 px-6 py-3">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </button>
+                    <button onclick="tukarHalaman(3)" class="clay-btn clay-btn-blue text-lg px-7 py-3">
+                        Seterusnya: Uji Situasi <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 3: ADIL ATAU TIDAK ADIL? -->
+        <section id="halaman-3" class="page-content hidden">
+            <div class="clay-card p-6 md:p-8 mb-6 border-4 border-amber-200 bg-gradient-to-b from-amber-50/40 to-white">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="w-10 h-10 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-xl">2</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-amber-900">Adil atau Tidak Adil?</h2>
+                </div>
+                <p class="text-slate-600 font-semibold mb-6 text-lg">Fahami situasi di bawah. Tekan butang pilihan kamu!</p>
+
+                <!-- 4 SITUASI INTERAKTIF -->
+                <div class="space-y-6">
+                    <!-- Situasi 1 -->
+                    <div class="bg-white border-3 border-slate-200 rounded-3xl p-5 shadow-sm hover:border-amber-300 transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-5">
+                            <div class="w-full md:w-1/3 bg-emerald-100 rounded-2xl p-3 border border-emerald-300">
+                                <svg viewBox="0 0 160 100" class="w-full h-auto">
+                                    <circle cx="50" cy="40" r="18" fill="#fca5a5"/>
+                                    <circle cx="110" cy="40" r="18" fill="#fed7aa"/>
+                                    <rect x="70" y="35" width="20" height="8" rx="2" fill="#facc15"/>
+                                    <text x="80" y="80" font-size="11" font-weight="bold" fill="#047857" text-anchor="middle">Kongsi Pensel</text>
+                                </svg>
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="bg-amber-100 text-amber-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Situasi 1</span>
+                                <h3 class="text-xl font-bold text-slate-800 my-2">Ali berkongsi pensel dengan rakannya.</h3>
+                                
+                                <div class="flex gap-3 my-3">
+                                    <button onclick="semakSituasi(1, true)" class="situasi-btn-1-adil clay-btn clay-btn-green px-6 py-2.5 text-base">
+                                        <i class="fa-solid fa-thumbs-up"></i> ADIL
+                                    </button>
+                                    <button onclick="semakSituasi(1, false)" class="situasi-btn-1-tidak clay-btn bg-rose-500 text-white px-6 py-2.5 text-base shadow-[0_6px_0_#9f1239]">
+                                        <i class="fa-solid fa-thumbs-down"></i> TIDAK ADIL
+                                    </button>
+                                </div>
+                                <div id="maklum-balas-situasi-1" class="hidden mt-3 p-3.5 rounded-2xl font-bold text-base transition-all"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Situasi 2 -->
+                    <div class="bg-white border-3 border-slate-200 rounded-3xl p-5 shadow-sm hover:border-amber-300 transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-5">
+                            <div class="w-full md:w-1/3 bg-rose-100 rounded-2xl p-3 border border-rose-300">
+                                <svg viewBox="0 0 160 100" class="w-full h-auto">
+                                    <line x1="10" y1="70" x2="150" y2="70" stroke="#f43f5e" stroke-width="3"/>
+                                    <circle cx="30" cy="40" r="14" fill="#cbd5e1"/>
+                                    <circle cx="60" cy="40" r="14" fill="#cbd5e1"/>
+                                    <circle cx="100" cy="35" r="16" fill="#f87171"/> <!-- Memotong -->
+                                    <text x="80" y="90" font-size="11" font-weight="bold" fill="#9f1239" text-anchor="middle">Potong Barisan</text>
+                                </svg>
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="bg-amber-100 text-amber-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Situasi 2</span>
+                                <h3 class="text-xl font-bold text-slate-800 my-2">Seorang murid memotong barisan ketika hendak membeli makanan di kantin.</h3>
+                                
+                                <div class="flex gap-3 my-3">
+                                    <button onclick="semakSituasi(2, true)" class="situasi-btn-2-adil clay-btn clay-btn-green px-6 py-2.5 text-base">
+                                        <i class="fa-solid fa-thumbs-up"></i> ADIL
+                                    </button>
+                                    <button onclick="semakSituasi(2, false)" class="situasi-btn-2-tidak clay-btn bg-rose-500 text-white px-6 py-2.5 text-base shadow-[0_6px_0_#9f1239]">
+                                        <i class="fa-solid fa-thumbs-down"></i> TIDAK ADIL
+                                    </button>
+                                </div>
+                                <div id="maklum-balas-situasi-2" class="hidden mt-3 p-3.5 rounded-2xl font-bold text-base transition-all"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Situasi 3 -->
+                    <div class="bg-white border-3 border-slate-200 rounded-3xl p-5 shadow-sm hover:border-amber-300 transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-5">
+                            <div class="w-full md:w-1/3 bg-purple-100 rounded-2xl p-3 border border-purple-300">
+                                <svg viewBox="0 0 160 100" class="w-full h-auto">
+                                    <rect x="30" y="40" width="40" height="25" rx="3" fill="#f472b6"/>
+                                    <rect x="90" y="40" width="40" height="25" rx="3" fill="#f472b6"/>
+                                    <text x="80" y="85" font-size="11" font-weight="bold" fill="#7e22ce" text-anchor="middle">Kek Sama Rata</text>
+                                </svg>
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="bg-amber-100 text-amber-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Situasi 3</span>
+                                <h3 class="text-xl font-bold text-slate-800 my-2">Ibu membahagikan kek secara sama rata kepada anak-anaknya.</h3>
+                                
+                                <div class="flex gap-3 my-3">
+                                    <button onclick="semakSituasi(3, true)" class="situasi-btn-3-adil clay-btn clay-btn-green px-6 py-2.5 text-base">
+                                        <i class="fa-solid fa-thumbs-up"></i> ADIL
+                                    </button>
+                                    <button onclick="semakSituasi(3, false)" class="situasi-btn-3-tidak clay-btn bg-rose-500 text-white px-6 py-2.5 text-base shadow-[0_6px_0_#9f1239]">
+                                        <i class="fa-solid fa-thumbs-down"></i> TIDAK ADIL
+                                    </button>
+                                </div>
+                                <div id="maklum-balas-situasi-3" class="hidden mt-3 p-3.5 rounded-2xl font-bold text-base transition-all"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Situasi 4 -->
+                    <div class="bg-white border-3 border-slate-200 rounded-3xl p-5 shadow-sm hover:border-amber-300 transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-5">
+                            <div class="w-full md:w-1/3 bg-orange-100 rounded-2xl p-3 border border-orange-300">
+                                <svg viewBox="0 0 160 100" class="w-full h-auto">
+                                    <circle cx="50" cy="40" r="18" fill="#f97316"/>
+                                    <rect x="35" y="65" width="15" height="15" fill="#facc15"/>
+                                    <rect x="55" y="65" width="15" height="15" fill="#60a5fa"/>
+                                    <circle cx="120" cy="40" r="16" fill="#cbd5e1"/>
+                                    <text x="80" y="90" font-size="11" font-weight="bold" fill="#c2410c" text-anchor="middle">Ambil Semua Mainan</text>
+                                </svg>
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <span class="bg-amber-100 text-amber-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Situasi 4</span>
+                                <h3 class="text-xl font-bold text-slate-800 my-2">Seorang murid mengambil semua alat permainan dan tidak membenarkan rakannya bermain.</h3>
+                                
+                                <div class="flex gap-3 my-3">
+                                    <button onclick="semakSituasi(4, true)" class="situasi-btn-4-adil clay-btn clay-btn-green px-6 py-2.5 text-base">
+                                        <i class="fa-solid fa-thumbs-up"></i> ADIL
+                                    </button>
+                                    <button onclick="semakSituasi(4, false)" class="situasi-btn-4-tidak clay-btn bg-rose-500 text-white px-6 py-2.5 text-base shadow-[0_6px_0_#9f1239]">
+                                        <i class="fa-solid fa-thumbs-down"></i> TIDAK ADIL
+                                    </button>
+                                </div>
+                                <div id="maklum-balas-situasi-4" class="hidden mt-3 p-3.5 rounded-2xl font-bold text-base transition-all"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NAVIGASI -->
+                <div class="mt-8 flex justify-between items-center gap-4">
+                    <button onclick="tukarHalaman(2)" class="clay-btn bg-slate-200 text-slate-700 px-6 py-3">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </button>
+                    <button onclick="tukarHalaman(4)" class="clay-btn clay-btn-orange text-lg px-7 py-3">
+                        Seterusnya: Kesan <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 4: KESAN PERLAKUAN TIDAK ADIL -->
+        <section id="halaman-4" class="page-content hidden">
+            <div class="clay-card p-6 md:p-8 mb-6 border-4 border-rose-200 bg-gradient-to-b from-rose-50/50 to-white">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="w-10 h-10 rounded-full bg-rose-500 text-white font-bold flex items-center justify-center text-xl">3</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-rose-900">Kesan Perlakuan Tidak Adil</h2>
+                </div>
+                <p class="text-slate-600 font-semibold mb-6 text-lg">Apakah yang akan berlaku jika kita bersikap TIDAK adil?</p>
+
+                <!-- KESAN-KESAN BAD -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                    <div class="bg-rose-100/80 border-3 border-rose-300 p-5 rounded-3xl flex items-center gap-4 shadow-sm">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm text-rose-500 flex-shrink-0">
+                            😢
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-xl text-rose-950">Rakan Berasa Sedih</h4>
+                            <p class="text-rose-800 text-sm font-semibold">Perasaan rakan akan terluka dan bersedih.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-rose-100/80 border-3 border-rose-300 p-5 rounded-3xl flex items-center gap-4 shadow-sm">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm text-rose-500 flex-shrink-0">
+                            😡
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-xl text-rose-950">Berlaku Pergaduhan</h4>
+                            <p class="text-rose-800 text-sm font-semibold">Suasana menjadi tidak tenteram dan bergaduh.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-rose-100/80 border-3 border-rose-300 p-5 rounded-3xl flex items-center gap-4 shadow-sm">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm text-rose-500 flex-shrink-0">
+                            😤
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-xl text-rose-950">Rakan Berasa Tidak Puas Hati</h4>
+                            <p class="text-rose-800 text-sm font-semibold">Rakan merasa tidak dihargai dengan saksama.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-rose-100/80 border-3 border-rose-300 p-5 rounded-3xl flex items-center gap-4 shadow-sm">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm text-rose-500 flex-shrink-0">
+                            💔
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-xl text-rose-950">Hubungan Menjadi Tidak Baik</h4>
+                            <p class="text-rose-800 text-sm font-semibold">Sukar untuk mengekalkan persahabatan yang erat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOALAN RENUNGAN -->
+                <div class="bg-indigo-50 border-3 border-indigo-300 rounded-3xl p-6 mb-6">
+                    <h3 class="text-xl md:text-2xl font-black text-indigo-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-amber-500 text-2xl animate-bounce-slow"></i> Soalan Renungan:
+                    </h3>
+                    <p class="text-lg md:text-xl font-bold text-indigo-800 mb-4">
+                        "Apakah yang boleh kamu lakukan untuk bersikap adil di rumah dan di sekolah?"
+                    </p>
+
+                    <!-- JAWAPAN / AMALAN BAIK -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="bg-white p-3.5 rounded-2xl border border-indigo-200 font-bold text-indigo-900 flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> Berkongsi barang dengan adik.
+                        </div>
+                        <div class="bg-white p-3.5 rounded-2xl border border-indigo-200 font-bold text-indigo-900 flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> Menunggu giliran ketika bermain.
+                        </div>
+                        <div class="bg-white p-3.5 rounded-2xl border border-indigo-200 font-bold text-indigo-900 flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> Membahagikan makanan secara sama rata.
+                        </div>
+                        <div class="bg-white p-3.5 rounded-2xl border border-indigo-200 font-bold text-indigo-900 flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> Tidak pilih kasih terhadap rakan.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NAVIGASI NAV -->
+                <div class="mt-8 flex justify-between items-center gap-4">
+                    <button onclick="tukarHalaman(3)" class="clay-btn bg-slate-200 text-slate-700 px-6 py-3">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </button>
+                    <button onclick="tukarHalaman(5)" class="clay-btn clay-btn-purple text-lg px-8 py-4">
+                        <i class="fa-solid fa-pencil text-xl"></i> Jom Buat Latihan!
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 5: JOM BUAT LATIHAN! -->
+        <section id="halaman-5" class="page-content hidden">
+            <div class="clay-card p-6 md:p-8 mb-6 border-4 border-amber-300 bg-white">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b-2 border-slate-100 pb-4">
+                    <div>
+                        <span class="bg-amber-100 text-amber-900 text-xs font-black px-3 py-1 rounded-full uppercase">Latihan Interaktif</span>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-amber-900 mt-1">Jom Buat Latihan!</h2>
+                        <p class="text-slate-600 font-semibold text-sm">Isi nama kamu dan jawab semua 10 soalan di bawah. Kemudian tekan butang Semak Jawapan.</p>
+                    </div>
+                    <div class="clay-badge px-4 py-2 flex items-center gap-2 text-amber-800 font-bold">
+                        <i class="fa-solid fa-clipboard-check text-amber-500 text-xl"></i> 10 Soalan
+                    </div>
+                </div>
+
+                <!-- BORANG SOALAN LATIHAN -->
+                <form id="borang-latihan" onsubmit="semakSemuaLatihan(event)" class="space-y-8">
+                    
+                    <!-- RUANGAN NAMA MURID -->
+                    <div class="bg-amber-50 p-4 rounded-2xl border-2 border-amber-300 flex flex-col md:flex-row items-start md:items-center gap-3">
+                        <label for="nama-murid-input" class="font-extrabold text-amber-900 text-base flex items-center gap-2 whitespace-nowrap">
+                            <i class="fa-solid fa-user-pen text-amber-600"></i> Nama Murid:
+                        </label>
+                        <input type="text" id="nama-murid-input" placeholder="Masukkan nama penuh kamu di sini..." required class="w-full px-4 py-2.5 rounded-xl border-2 border-amber-300 focus:outline-none focus:border-amber-500 font-bold text-slate-800 bg-white shadow-inner text-base">
+                    </div>
+
+                    <!-- BAHAGIAN A -->
+                    <div class="bg-amber-50/70 p-5 rounded-3xl border-2 border-amber-200">
+                        <h3 class="text-xl font-extrabold text-amber-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-amber-500 text-white text-sm flex items-center justify-center">A</span>
+                            Bahagian A: Pilih Jawapan yang Betul
+                        </h3>
+
+                        <!-- Soalan 1 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-amber-200 shadow-sm" id="box-s1">
+                            <p class="font-bold text-lg text-slate-800 mb-3">1. Apakah maksud sikap adil?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s1" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Melayan orang lain dengan saksama dan tidak pilih kasih
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s1" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Mengambil barang rakan tanpa meminta izin
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s1" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Mementingkan diri sendiri semasa bermain
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 2 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-amber-200 shadow-sm" id="box-s2">
+                            <p class="font-bold text-lg text-slate-800 mb-3">2. Apakah contoh perlakuan adil di sekolah?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s2" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Memotong barisan di kantin
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s2" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Beratur dan menunggu giliran
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s2" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Bermain seorang diri dan enggan berkongsi
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 3 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-amber-200 shadow-sm" id="box-s3">
+                            <p class="font-bold text-lg text-slate-800 mb-3">3. Ibu membahagikan kek secara sama rata kepada anak-anaknya. Apakah sikap ibu?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s3" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Pemarah
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s3" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Adil
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s3" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Pilih kasih
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 4 -->
+                        <div class="bg-white p-5 rounded-2xl border border-amber-200 shadow-sm" id="box-s4">
+                            <p class="font-bold text-lg text-slate-800 mb-3">4. Apakah yang patut kita lakukan apabila menggunakan alat tulis bersama rakan?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s4" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Berkongsi alat tulis dengan saksama
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s4" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Menyimpan semua alat tulis untuk diri sendiri
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s4" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Merampas pensel warna kepunyaan rakan
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- BAHAGIAN B -->
+                    <div class="bg-emerald-50/70 p-5 rounded-3xl border-2 border-emerald-200">
+                        <h3 class="text-xl font-extrabold text-emerald-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-emerald-500 text-white text-sm flex items-center justify-center">B</span>
+                            Bahagian B: Adil atau Tidak Adil?
+                        </h3>
+
+                        <!-- Soalan 5 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-emerald-200 shadow-sm" id="box-s5">
+                            <p class="font-bold text-lg text-slate-800 mb-3">5. Siti memberi roti yang sama besar kepada adiknya dan rekannya.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <label class="option-clay-btn flex-1 min-w-[140px] flex items-center justify-center p-3.5 rounded-2xl cursor-pointer font-bold text-slate-700">
+                                    <input type="radio" name="s5" value="ADIL" class="hidden">
+                                    <i class="fa-solid fa-check text-emerald-600 mr-2"></i> ADIL
+                                </label>
+                                <label class="option-clay-btn flex-1 min-w-[140px] flex items-center justify-center p-3.5 rounded-2xl cursor-pointer font-bold text-slate-700">
+                                    <input type="radio" name="s5" value="TIDAK_ADIL" class="hidden">
+                                    <i class="fa-solid fa-xmark text-rose-600 mr-2"></i> TIDAK ADIL
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 6 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-emerald-200 shadow-sm" id="box-s6">
+                            <p class="font-bold text-lg text-slate-800 mb-3">6. Danial mengambil semua alat permainan dan tidak membenarkan rakannya bermain bersama.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <label class="option-clay-btn flex-1 min-w-[140px] flex items-center justify-center p-3.5 rounded-2xl cursor-pointer font-bold text-slate-700">
+                                    <input type="radio" name="s6" value="ADIL" class="hidden">
+                                    <i class="fa-solid fa-check text-emerald-600 mr-2"></i> ADIL
+                                </label>
+                                <label class="option-clay-btn flex-1 min-w-[140px] flex items-center justify-center p-3.5 rounded-2xl cursor-pointer font-bold text-slate-700">
+                                    <input type="radio" name="s6" value="TIDAK_ADIL" class="hidden">
+                                    <i class="fa-solid fa-xmark text-rose-600 mr-2"></i> TIDAK ADIL
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 7 -->
+                        <div class="bg-white p-5 rounded-2xl border border-emerald-200 shadow-sm" id="box-s7">
+                            <p class="font-bold text-lg text-slate-800 mb-3">7. Mei Ling beratur dengan tertib dan sabar semasa membeli makanan di kantin sekolah.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <label class="option-clay-btn flex-1 min-w-[140px] flex items-center justify-center p-3.5 rounded-2xl cursor-pointer font-bold text-slate-700">
+                                    <input type="radio" name="s7" value="ADIL" class="hidden">
+                                    <i class="fa-solid fa-check text-emerald-600 mr-2"></i> ADIL
+                                </label>
+                                <label class="option-clay-btn flex-1 min-w-[140px] flex items-center justify-center p-3.5 rounded-2xl cursor-pointer font-bold text-slate-700">
+                                    <input type="radio" name="s7" value="TIDAK_ADIL" class="hidden">
+                                    <i class="fa-solid fa-xmark text-rose-600 mr-2"></i> TIDAK ADIL
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- BAHAGIAN C -->
+                    <div class="bg-sky-50/70 p-5 rounded-3xl border-2 border-sky-200">
+                        <h3 class="text-xl font-extrabold text-sky-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-sky-500 text-white text-sm flex items-center justify-center">C</span>
+                            Bahagian C: Fikir dan Jawab
+                        </h3>
+
+                        <!-- Soalan 8 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-sky-200 shadow-sm" id="box-s8">
+                            <p class="font-bold text-lg text-slate-800 mb-3">8. Apakah kepentingan apabila kita bersikap adil?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s8" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Semua orang berasa gembira dan hidup aman
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s8" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Rakan-rakan berasa sedih dan marah
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s8" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Sering berlaku pergaduhan di dalam kelas
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 9 -->
+                        <div class="bg-white p-5 rounded-2xl mb-4 border border-sky-200 shadow-sm" id="box-s9">
+                            <p class="font-bold text-lg text-slate-800 mb-3">9. Apakah kesan jika kita TIDAK bersikap adil kepada rakan?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s9" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Hubungan dengan rakan menjadi semakin rapat
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s9" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Rakan berasa gembira dan suka bersahabat
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s9" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Rakan berasa sedih dan tidak puas hati
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+
+                        <!-- Soalan 10 -->
+                        <div class="bg-white p-5 rounded-2xl border border-sky-200 shadow-sm" id="box-s10">
+                            <p class="font-bold text-lg text-slate-800 mb-3">10. Apakah amalan adil yang boleh kita lakukan di rumah?</p>
+                            <div class="space-y-2">
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s10" value="A" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">A</span>
+                                    Berkongsi barang dan makanan dengan adik
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s10" value="B" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">B</span>
+                                    Mengambil mainan adik secara paksa
+                                </label>
+                                <label class="option-clay-btn flex items-center p-3.5 rounded-2xl cursor-pointer font-semibold text-slate-700">
+                                    <input type="radio" name="s10" value="C" class="hidden">
+                                    <span class="w-6 h-6 rounded-full border-2 border-slate-400 mr-3 flex items-center justify-center font-bold text-xs">C</span>
+                                    Makan makanan manis seorang diri tanpa berkongsi
+                                </label>
+                            </div>
+                            <div class="nota-jawapan text-sm font-bold mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- AMARAN PENGHANTARAN JIKA KOSONG -->
+                    <div id="amaran-latihan" class="hidden bg-amber-100 border-2 border-amber-400 text-amber-900 p-4 rounded-2xl text-center font-bold">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600 mr-1"></i> Sila jawab semua soalan sebelum menekan butang Semak Jawapan!
+                    </div>
+
+                    <!-- BUTANG SEMAK JAWAPAN -->
+                    <div class="text-center pt-4">
+                        <button type="submit" id="btn-semak-latihan" class="clay-btn clay-btn-green text-xl px-10 py-5">
+                            <i class="fa-solid fa-check-double text-2xl"></i> SEMAK JAWAPAN
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- HALAMAN 6: TAHNIAH / KEPUTUSAN -->
+        <section id="halaman-6" class="page-content hidden">
+            <div class="clay-card p-6 md:p-10 text-center border-4 border-emerald-300 bg-gradient-to-b from-emerald-50 via-white to-amber-50">
+                
+                <!-- IKON / PIALA -->
+                <div class="inline-flex items-center justify-center w-28 h-28 rounded-full bg-amber-100 text-amber-500 text-6xl mb-4 border-4 border-amber-300 shadow-inner animate-bounce-slow">
+                    🏆
+                </div>
+
+                <h2 id="tajuk-keputusan" class="text-3xl md:text-5xl font-black text-emerald-800 mb-2">Tahniah!</h2>
+                <p id="subtajuk-keputusan" class="text-slate-600 font-bold text-lg mb-6">Kamu telah menyelesaikan Latihan Pendidikan Moral!</p>
+
+                <!-- PAPARAN SLIP KEPUTUSAN (BOLEH TANGKAP LAYAR UNTUK GOOGLE CLASSROOM) -->
+                <div id="kad-laporan" class="bg-white max-w-lg mx-auto p-6 md:p-8 rounded-3xl border-4 border-emerald-300 shadow-xl mb-6 text-center relative overflow-hidden">
+                    <!-- Header Kad Laporan -->
+                    <div class="border-b-2 border-emerald-100 pb-4 mb-4">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-black px-3 py-1 rounded-full uppercase mb-1">
+                            SLIP KEPUTUSAN PdPR
+                        </span>
+                        <h3 class="text-xl md:text-2xl font-black text-emerald-900 uppercase tracking-wide">
+                            SK PUTERI
+                        </h3>
+                        <p class="text-xs font-bold text-slate-500">
+                            Disediakan oleh Cikgu Maria A. Rachman
+                        </p>
+                    </div>
+
+                    <!-- Nama Murid -->
+                    <div class="bg-emerald-50/80 p-3.5 rounded-2xl border border-emerald-200 mb-5">
+                        <p class="text-xs font-bold text-emerald-700 uppercase tracking-wider">NAMA MURID</p>
+                        <p id="papar-nama-murid" class="text-xl md:text-2xl font-black text-slate-800 break-words mt-0.5">
+                            -
+                        </p>
+                    </div>
+
+                    <!-- Markah Peratus -->
+                    <p class="text-slate-500 font-bold uppercase text-xs tracking-wider mb-1">PERATUS MARKAH</p>
+                    <div class="text-5xl md:text-6xl font-black text-emerald-600 my-2 tracking-tight">
+                        <span id="peratus-akhir">0%</span>
+                    </div>
+
+                    <div id="status-bintang" class="text-amber-400 text-2xl flex justify-center gap-1 my-3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <!-- Mesej Maklum Balas -->
+                    <div id="mesej-keputusan-box" class="p-4 rounded-2xl border-2 font-bold text-base md:text-lg shadow-inner my-4">
+                    </div>
+
+                    <p class="text-[11px] text-slate-400 font-semibold italic mt-2">
+                        <i class="fa-solid fa-camera text-slate-400 mr-1"></i> Tangkap layar (screenshot) paparan ini untuk serahan Google Classroom
+                    </p>
+                </div>
+
+                <!-- PESANAN MORAL UTAMA -->
+                <div class="bg-sky-100 border-2 border-sky-300 p-5 rounded-3xl max-w-xl mx-auto mb-8 text-sky-900 font-bold text-base md:text-lg">
+                    <p>
+                        <i class="fa-solid fa-heart text-rose-500 mr-2"></i>
+                        "Amalkan sikap adil di rumah dan di sekolah. Apabila kita bersikap adil, semua orang akan berasa gembira."
+                    </p>
+                </div>
+
+                <!-- BUTANG KEPUTUSAN -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="semulaLatihan()" class="clay-btn clay-btn-yellow text-lg px-8 py-4">
+                        <i class="fa-solid fa-rotate-left"></i> CUBA LAGI
+                    </button>
+                    <button onclick="tukarHalaman(2)" class="clay-btn clay-btn-blue text-lg px-8 py-4">
+                        <i class="fa-solid fa-book"></i> BACA SEMULA NOTA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER HALAMAN -->
+    <footer class="mt-auto text-center py-6 text-slate-600 font-semibold text-xs md:text-sm border-t border-emerald-200/60 bg-white/50 backdrop-blur-sm">
+        <p class="font-bold text-emerald-800 text-base mb-0.5">SK PUTERI</p>
+        <p class="text-slate-700 font-bold mb-1">Disediakan oleh Cikgu Maria A. Rachman</p>
+        <p class="text-slate-500 text-xs">Pendidikan Moral Tahun 1 • Unit 8: Adil Membawa Sejahtera • Modul PdPR Interaktif</p>
+    </footer>
+
+    <script>
+        /* SINTESIS KESAN BUNYI MENGGUNAKAN WEB AUDIO API */
+        class KancilAudio {
+            constructor() {
+                this.ctx = null;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                    if (AudioCtx) this.ctx = new AudioCtx();
+                }
+            }
+
+            mainSemboyan(freq, type = 'sine', duration = 0.15) {
+                try {
+                    this.init();
+                    if (!this.ctx) return;
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e) {}
+            }
+
+            bunyiKlik() {
+                this.mainSemboyan(523.25, 'sine', 0.08); // C5
+            }
+
+            bunyiBetul() {
+                this.mainSemboyan(587.33, 'triangle', 0.1);
+                setTimeout(() => this.mainSemboyan(880, 'triangle', 0.25), 100);
+            }
+
+            bunyiSalah() {
+                this.mainSemboyan(220, 'sawtooth', 0.15);
+                setTimeout(() => this.mainSemboyan(180, 'sawtooth', 0.25), 120);
+            }
+
+            bunyiSorak() {
+                const nada = [440, 554.37, 659.25, 880];
+                nada.forEach((f, i) => {
+                    setTimeout(() => this.mainSemboyan(f, 'sine', 0.2), i * 100);
+                });
+            }
+        }
+
+        const audioManager = new KancilAudio();
+
+        /* SKRIMA JAWAPAN KUNCI BAGI LATIHAN (10 SOALAN) */
+        const skemaJawapan = {
+            s1: { jawapan: "A", nota: "Adil bermaksud melayan orang lain secara saksama dan tidak pilih kasih." },
+            s2: { jawapan: "B", nota: "Beratur dan menunggu giliran menunjukkan amalan bersikap adil." },
+            s3: { jawapan: "B", nota: "Membahagikan kek secara sama rata ialah perlakuan yang adil." },
+            s4: { jawapan: "A", nota: "Kita hendaklah berkongsi alat tulis dengan saksama bersama rakan." },
+            s5: { jawapan: "ADIL", nota: "Siti berlaku adil kerana memberi saiz roti yang sama besar." },
+            s6: { jawapan: "TIDAK_ADIL", nota: "Danial tidak adil kerana mementingkan diri dan mengambil semua mainan." },
+            s7: { jawapan: "ADIL", nota: "Mei Ling bersikap adil kepada murid lain dengan menghormati barisan." },
+            s8: { jawapan: "A", nota: "Keadaan menjadi aman dan semua orang berasa gembira apabila kita adil." },
+            s9: { jawapan: "C", nota: "Sikap tidak adil menyebabkan rakan berasa sedih dan tidak puas hati." },
+            s10: { jawapan: "A", nota: "Di rumah, kita patut berkongsi barang dan makanan dengan adik secara adil." }
+        };
+
+        /* PENGURUSAN HALAMAN & NAVIGASI */
+        function tukarHalaman(nomborHalaman) {
+            audioManager.bunyiKlik();
+
+            // Sembunyikan semua Halaman
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+            
+            // Paparkan Halaman sasaran
+            const sasaran = document.getElementById(`halaman-${nomborHalaman}`);
+            if (sasaran) {
+                sasaran.classList.remove('hidden');
+            }
+
+            // Kemaskini Gaya Tab Navigasi
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('bg-emerald-500', 'text-white', 'shadow-sm');
+                tab.classList.add('bg-slate-100', 'text-slate-600');
+            });
+
+            const activeTab = document.getElementById(`nav-${nomborHalaman}`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-slate-100', 'text-slate-600');
+                activeTab.classList.add('bg-emerald-500', 'text-white', 'shadow-sm');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* MODAL PANDUAN */
+        function bukaModalPanduan() {
+            audioManager.bunyiKlik();
+            document.getElementById('modal-panduan').classList.remove('hidden');
+        }
+
+        function tutupModalPanduan() {
+            audioManager.bunyiKlik();
+            document.getElementById('modal-panduan').classList.add('hidden');
+        }
+
+        /* LOGIK HALAMAN 3: SEMAK SITUASI INTERAKTIF */
+        const jawapanBetulSituasi = {
+            1: true,   // Ali berkongsi (Adil)
+            2: false,  // Potong barisan (Tidak Adil)
+            3: true,   // Ibu bahagi kek (Adil)
+            4: false   // Ambil semua mainan (Tidak Adil)
+        };
+
+        const peneranganSituasi = {
+            1: "Syabas! Ali bersikap adil kerana sudi berkongsi barang dengan rakannya.",
+            2: "Tepat sekali! Memotong barisan adalah perbuatan tidak adil kerana tidak menghormati hak orang lain.",
+            3: "Syabas! Ibu berlaku adil dengan membahagikan kek secara sama rata tanpa pilih kasih.",
+            4: "Tepat sekali! Tamak dan mengambil semua mainan adalah perlakuan yang tidak adil."
+        };
+
+        function semakSituasi(num, jawapanMurid) {
+            const isBetul = (jawapanMurid === jawapanBetulSituasi[num]);
+            const box = document.getElementById(`maklum-balas-situasi-${num}`);
+            
+            if (isBetul) {
+                audioManager.bunyiBetul();
+                box.className = "mt-3 p-4 rounded-2xl font-bold text-base transition-all bg-emerald-100 border-2 border-emerald-400 text-emerald-900";
+                box.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-xl mr-2"></i> <strong>Syabas! Jawapan kamu betul!</strong><br><span class="text-sm text-emerald-800 font-semibold">${peneranganSituasi[num]}</span>`;
+            } else {
+                audioManager.bunyiSalah();
+                box.className = "mt-3 p-4 rounded-2xl font-bold text-base transition-all bg-rose-100 border-2 border-rose-400 text-rose-900";
+                box.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 text-xl mr-2"></i> <strong>Belum tepat.</strong><br><span class="text-sm text-rose-800 font-semibold">Cuba fikirkan semula sama ada perbuatan itu adil atau tidak adil.</span>`;
+            }
+            box.classList.remove('hidden');
+        }
+
+        /* INTERAKSI PILIHAN RADIO PADA LATIHAN */
+        document.addEventListener('DOMContentLoaded', () => {
+            const allLabels = document.querySelectorAll('.option-clay-btn');
+            allLabels.forEach(label => {
+                label.addEventListener('click', function() {
+                    audioManager.bunyiKlik();
+                    const input = this.querySelector('input[type="radio"]');
+                    if (input) {
+                        const name = input.getAttribute('name');
+                        // Nyahpilih radio lain dalam kumpulan yang sama
+                        document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                            r.parentElement.classList.remove('selected');
+                        });
+                        this.classList.add('selected');
+                        input.checked = true;
+                    }
+                });
+            });
+        });
+
+        /* LOGIK SEMAKAN LATIHAN HALAMAN 5 */
+        function semakSemuaLatihan(event) {
+            event.preventDefault();
+            
+            const inputNama = document.getElementById('nama-murid-input');
+            const namaMurid = inputNama ? inputNama.value.trim() : "";
+
+            let jawapanLengkap = true;
+            let markah = 0;
+
+            // Semak jika nama diisi & semua 10 soalan telah dijawab
+            if (!namaMurid) {
+                audioManager.bunyiSalah();
+                inputNama.focus();
+                const amaran = document.getElementById('amaran-latihan');
+                amaran.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-600 mr-1"></i> Sila masukkan Nama Murid sebelum menekan butang Semak Jawapan!`;
+                amaran.classList.remove('hidden');
+                amaran.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                const dipilhi = document.querySelector(`input[name="s${i}"]:checked`);
+                if (!dipilhi) {
+                    jawapanLengkap = false;
+                    break;
+                }
+            }
+
+            const amaran = document.getElementById('amaran-latihan');
+            if (!jawapanLengkap) {
+                audioManager.bunyiSalah();
+                amaran.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-600 mr-1"></i> Sila jawab semua soalan sebelum menekan butang Semak Jawapan!`;
+                amaran.classList.remove('hidden');
+                amaran.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            } else {
+                amaran.classList.add('hidden');
+            }
+
+            // Mula penilaian markah & maklumbalas visual
+            for (let i = 1; i <= 10; i++) {
+                const selectedInput = document.querySelector(`input[name="s${i}"]:checked`);
+                const val = selectedInput ? selectedInput.value : '';
+                const kuali = skemaJawapan[`s${i}`];
+                const box = document.getElementById(`box-s${i}`);
+                const notaBox = box.querySelector('.nota-jawapan');
+
+                // Dapatkan semua pilihan di soalan ini
+                const options = box.querySelectorAll('.option-clay-btn');
+                options.forEach(opt => {
+                    const inp = opt.querySelector('input');
+                    if (inp.value === kuali.jawapan) {
+                        opt.classList.add('correct-select');
+                    }
+                    if (inp.checked && inp.value !== kuali.jawapan) {
+                        opt.classList.add('wrong-select');
+                    }
+                });
+
+                if (val === kuali.jawapan) {
+                    markah++;
+                    notaBox.className = "nota-jawapan text-sm font-bold mt-3 p-3 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300";
+                    notaBox.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Betul! ${kuali.nota}`;
+                } else {
+                    notaBox.className = "nota-jawapan text-sm font-bold mt-3 p-3 rounded-xl bg-rose-100 text-rose-900 border border-rose-300";
+                    notaBox.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 mr-1"></i> Jawapan kamu belum tepat. Jawapan betul: <strong>${kuali.jawapan}</strong>. <br>${kuali.nota}`;
+                }
+                notaBox.classList.remove('hidden');
+            }
+
+            // Pengiraan peratus markah: (Jawapan Betul / 10) * 100
+            const peratus = Math.round((markah / 10) * 100);
+
+            // Halang butang semak daripada ditekan berulang kali
+            document.getElementById('btn-semak-latihan').classList.add('opacity-50', 'pointer-events-none');
+
+            // Bawa ke Halaman Keputusan
+            paparkanKeputusan(peratus, namaMurid);
+        }
+
+        /* PAPARAN KEPUTUSAN DI HALAMAN 6 */
+        function paparkanKeputusan(peratus, nama) {
+            document.getElementById('peratus-akhir').textContent = peratus + "%";
+            document.getElementById('papar-nama-murid').textContent = nama;
+
+            const tajuk = document.getElementById('tajuk-keputusan');
+            const subtajuk = document.getElementById('subtajuk-keputusan');
+            const mesejBox = document.getElementById('mesej-keputusan-box');
+            const bintangContainer = document.getElementById('status-bintang');
+
+            // Set bintang mengikut peratus markah
+            let bintangHtml = '';
+            if (peratus >= 80) {
+                bintangHtml = '<i class="fa-solid fa-star text-amber-400"></i><i class="fa-solid fa-star text-amber-400"></i><i class="fa-solid fa-star text-amber-400"></i>';
+            } else if (peratus >= 50) {
+                bintangHtml = '<i class="fa-solid fa-star text-amber-400"></i><i class="fa-solid fa-star text-amber-400"></i><i class="fa-regular fa-star text-slate-300"></i>';
+            } else {
+                bintangHtml = '<i class="fa-solid fa-star text-amber-400"></i><i class="fa-regular fa-star text-slate-300"></i><i class="fa-regular fa-star text-slate-300"></i>';
+            }
+            bintangContainer.innerHTML = bintangHtml;
+
+            if (peratus >= 70) {
+                audioManager.bunyiSorak();
+                tajuk.textContent = "Tahniah! Cemerlang!";
+                tajuk.className = "text-3xl md:text-5xl font-black text-emerald-800 mb-2";
+                subtajuk.textContent = "Kamu memang bijak dan memahami pelajaran!";
+                
+                mesejBox.className = "p-4 rounded-2xl border-2 font-bold text-base md:text-lg shadow-inner my-4 bg-emerald-100 border-emerald-300 text-emerald-950";
+                mesejBox.innerHTML = `🌟 "Tahniah! Kamu telah memahami maksud adil. Teruskan amalan baik ini!"`;
+            } else {
+                audioManager.bunyiSalah();
+                tajuk.textContent = "Usaha Yang Bagus!";
+                tajuk.className = "text-3xl md:text-5xl font-black text-amber-800 mb-2";
+                subtajuk.textContent = "Jangan putus asa, mari belajar lagi!";
+                
+                mesejBox.className = "p-4 rounded-2xl border-2 font-bold text-base md:text-lg shadow-inner my-4 bg-amber-100 border-amber-300 text-amber-950";
+                mesejBox.innerHTML = `💪 "Bagus kerana mencuba! Baca semula nota dan cuba sekali lagi. Kamu pasti boleh!"`;
+            }
+
+            // Tunjuk Halaman 6 selepas tunda singkat untuk animasi yang mulus
+            setTimeout(() => {
+                tukarHalaman(6);
+            }, 600);
+        }
+
+        /* ZERO-RESET BAGI BUTANG CUBA LAGI */
+        function semulaLatihan() {
+            audioManager.bunyiKlik();
+            
+            // Reset Borang
+            document.getElementById('borang-latihan').reset();
+            
+            // Reset Kelas CSS Pilihan
+            document.querySelectorAll('.option-clay-btn').forEach(btn => {
+                btn.classList.remove('selected', 'correct-select', 'wrong-select');
+            });
+
+            // Sembunyikan Nota Jawapan
+            document.querySelectorAll('.nota-jawapan').forEach(nota => {
+                nota.classList.add('hidden');
+                nota.innerHTML = '';
+            });
+
+            // Reset Paparan Peratus
+            document.getElementById('peratus-akhir').textContent = "0%";
+            document.getElementById('papar-nama-murid').textContent = "-";
+
+            // Aktifkan Semula Butang Hantar
+            const btnSemak = document.getElementById('btn-semak-latihan');
+            btnSemak.classList.remove('opacity-50', 'pointer-events-none');
+
+            // Kembalikan ke Halaman Latihan
+            tukarHalaman(5);
+        }
+    </script>
+</body>
+</html>
